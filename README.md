@@ -1,5 +1,8 @@
 [![Linux CI](https://github.com/flightaware/TclXML/actions/workflows/linux-ci.yml/badge.svg)](https://github.com/flightaware/TclXML/actions/workflows/linux-ci.yml)
 
+I was able to clean compile, but several tests fail, for example destroying children still leaves items inside the tree.\
+This package has then been replaced in favour of the tdom.
+
 # TclXML
 TclXML is a package that provides XML parsing for the Tcl scripting language.
 It has two implementations of XML parsers: one written purely in Tcl

@@ -114,7 +114,11 @@ OBJEXT          = @OBJEXT@
 RANLIB          = @RANLIB@
 RANLIB_STUB     = @RANLIB_STUB@
 SHLIB_CFLAGS    = @SHLIB_CFLAGS@
+# Fallback to gcc -shared if configure doesn't set SHLIB_LD (e.g., MSYS2)
 SHLIB_LD        = @SHLIB_LD@
+ifeq ($(SHLIB_LD),)
+SHLIB_LD        = $(CC) -shared
+endif
 SHLIB_LD_LIBS   = @SHLIB_LD_LIBS@
 STLIB_LD        = @STLIB_LD@
 #TCL_DEFS       = @TCL_DEFS@
@@ -158,7 +162,8 @@ PKG_CFLAGS	= @PKG_CFLAGS@ $(XML2_CFLAGS) $(XSLT_CFLAGS)
 # you do not compile with a similar machine setup as the Tcl core was
 # compiled with.
 #DEFS           = $(TCL_DEFS) @DEFS@ $(PKG_CFLAGS)
-DEFS		= @DEFS@ $(PKG_CFLAGS)
+# Add -DSTATIC_BUILD=1 for MinGW/MSYS2 to avoid DLL import/export issues
+DEFS		= @DEFS@ -DSTATIC_BUILD=1 $(PKG_CFLAGS)
 
 # Move pkgIndex.tcl to 'BINARIES' var if it is generated in the Makefile
 CONFIG_CLEAN_FILES = Makefile pkgIndex.tcl include/tclxml/tclxml.h

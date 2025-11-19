@@ -15,11 +15,9 @@
 #
 # $Id: xml-8.1.tcl,v 1.16.2.1 2005/12/28 06:49:51 balls Exp $
 
-package require Tcl 8.1
-
-package provide xmldefs 3.3
-
-package require sgml 1.8
+package require Tcl
+package provide xmldefs 3.3.1
+package require sgml
 
 namespace eval xml {
 

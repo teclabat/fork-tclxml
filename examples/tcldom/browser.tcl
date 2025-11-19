@@ -19,8 +19,7 @@ exec wish "$0" "$@"
 package require dom
 package require domtree
 package require domtext
-
-package provide app-browser 3.3
+package provide app-browser 3.3.1
 
 proc Open {} {
     global tree text doc view

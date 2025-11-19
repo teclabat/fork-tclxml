@@ -13,10 +13,9 @@
 #
 # $Id: xsltcache.tcl,v 1.10 2005/11/04 06:41:56 balls Exp $
 
-package require xslt 3.3
+package require xslt
 package require uri
-
-package provide xslt::cache 3.3
+package provide xslt::cache 3.3.1
 
 namespace eval xslt::cache {
     namespace export transform transformdoc flush

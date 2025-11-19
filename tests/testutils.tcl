@@ -202,8 +202,8 @@ proc testPackage {package {version ""}} {
 	# "libxml2" is shorthand for xml::libxml2
 	set package xml::libxml2
     }
-    if {![catch "package present $package $version"]} { return }
-    set rc [catch "package require $package $version" result]
+    if {![catch "package present $package"]} { return }
+    set rc [catch "package require $package" result]
     if {$rc} { return -code $rc $result }
     set version $result
     set loadScript [package ifneeded $package $version]

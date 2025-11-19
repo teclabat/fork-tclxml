@@ -10,11 +10,8 @@
 #
 # $Id: dommap.tcl,v 1.5 2003/12/09 04:56:43 balls Exp $
 
-package provide dommap 1.0
-
-# We need the DOM
-package require dom 2.6
-
+package provide dommap
+package require dom
 namespace eval dommap {
     namespace export map
 }

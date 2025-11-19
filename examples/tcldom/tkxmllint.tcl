@@ -24,11 +24,9 @@ set VERSION 1.9
 lappend auto_path [file dirname [info nameofexecutable]]
 
 package require dom
-
 package require msgcat
 namespace import ::msgcat::mc
-
-package require uri 1.2
+package require uri
 
 tk appname tkxmllint
 

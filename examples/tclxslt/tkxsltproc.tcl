@@ -24,12 +24,12 @@ set VERSION 1.9
 lappend auto_path [file dirname [info nameofexecutable]]
 
 # v3.1+ gives us the "-indent", "-resulturi" and "-profilefilename" options
-package require xslt 3.3
+package require xslt
 
 package require msgcat
 catch {namespace import ::msgcat::mc}
 
-package require uri 1.2
+package require uri
 
 # We need common routines from tkxmllint
 source [file join [file dirname [info script]] common.tcl]

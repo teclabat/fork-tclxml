@@ -48,7 +48,7 @@ TEA_ADD_INCLUDES([-Iinclude])
 TEA_ADD_LIBS([])
 TEA_ADD_CFLAGS([])
 TEA_ADD_STUB_SOURCES([tclxmlStubInit.c tclxmlStubLib.c])
-TEA_ADD_TCL_SOURCES([tclxml-tcl/xml__tcl.tcl tclxml-tcl/sgml-8.0.tcl tclxml-tcl/sgml-8.1.tcl tclxml-tcl/xml-8.0.tcl tclxml-tcl/xml-8.1.tcl tclxml-tcl/sgmlparser.tcl tclxml-tcl/tclparser-8.0.tcl tclxml-tcl/tclparser-8.1.tcl tclxml-tcl/xmldep.tcl tclxml-tcl/xpath.tcl tcldom-libxml2.tcl tcldom-tcl/xmlswitch.tcl tclxslt/process.tcl tclxslt/resources.tcl tclxslt/utilities.tcl tclxslt/xsltcache.tcl tclxslt-libxslt.tcl])
+TEA_ADD_TCL_SOURCES([tclxml-tcl/xml__tcl.tcl tclxml-tcl/sgml-8.1.tcl tclxml-tcl/xml-8.1.tcl tclxml-tcl/sgmlparser.tcl tclxml-tcl/tclparser-8.1.tcl tclxml-tcl/xmldep.tcl tclxml-tcl/xpath.tcl tcldom-libxml2.tcl tcldom-tcl/xmlswitch.tcl tclxslt/process.tcl tclxslt/resources.tcl tclxslt/utilities.tcl tclxslt/xsltcache.tcl tclxslt-libxslt.tcl])
 
 #--------------------------------------------------------------------
 # A few miscellaneous platform-specific items:

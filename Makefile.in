@@ -114,9 +114,9 @@ OBJEXT          = @OBJEXT@
 RANLIB          = @RANLIB@
 RANLIB_STUB     = @RANLIB_STUB@
 SHLIB_CFLAGS    = @SHLIB_CFLAGS@
-# For MinGW/MSYS2: Define CCLD and override SHLIB_LD for proper DLL creation
+# For MinGW/MSYS2: Define CCLD and add --export-all-symbols for DLL creation
 CCLD            = $(CC)
-SHLIB_LD        = @SHLIB_LD@
+SHLIB_LD        = @SHLIB_LD@ -Wl,--export-all-symbols
 SHLIB_LD_LIBS   = @SHLIB_LD_LIBS@
 STLIB_LD        = @STLIB_LD@
 #TCL_DEFS       = @TCL_DEFS@
@@ -146,6 +146,8 @@ TCLSH_ENV	= TCL_LIBRARY=`@CYGPATH@ $(TCL_SRC_DIR)/library` \
 
 TCLSH_PROG	= @TCLSH_PROG@
 TCLSH		= $(TCLSH_ENV) $(TCLSH_PROG)
+# Installed tclsh for testing
+INSTALLED_TCLSH	= @INSTALLED_TCLSH@
 
 SHARED_BUILD	= @SHARED_BUILD@
 
@@ -160,8 +162,9 @@ PKG_CFLAGS	= @PKG_CFLAGS@ $(XML2_CFLAGS) $(XSLT_CFLAGS)
 # you do not compile with a similar machine setup as the Tcl core was
 # compiled with.
 #DEFS           = $(TCL_DEFS) @DEFS@ $(PKG_CFLAGS)
-# Define BUILD_Tclxml for MinGW/MSYS2 to enable proper DLL exports
-DEFS		= @DEFS@ -DBUILD_Tclxml=1 $(PKG_CFLAGS)
+# Use STATIC_BUILD for MinGW/MSYS2 since all modules are in one DLL
+# This prevents __imp_ import errors between internal modules
+DEFS		= @DEFS@ -DSTATIC_BUILD=1 $(PKG_CFLAGS)
 
 # Move pkgIndex.tcl to 'BINARIES' var if it is generated in the Makefile
 CONFIG_CLEAN_FILES = Makefile pkgIndex.tcl include/tclxml/tclxml.h
@@ -266,13 +269,13 @@ testshell	=	$(TCLSH_PROG) $(srcdir)/testshell
 test: test-tclxml test-tcldom test-tclxslt
 
 test-tclxml:
-	(cd $(srcdir)/tests/tclxml; $(TCLSH) all.tcl)
+	(cd $(srcdir)/tests/tclxml; $(INSTALLED_TCLSH) all.tcl)
 
 test-tcldom:
-	(cd $(srcdir)/tests/tcldom; $(TCLSH) all.tcl)
+	(cd $(srcdir)/tests/tcldom; $(INSTALLED_TCLSH) all.tcl)
 
 test-tclxslt:
-	(cd $(srcdir)/tests/tclxslt; $(TCLSH) all.tcl)
+	(cd $(srcdir)/tests/tclxslt; $(INSTALLED_TCLSH) all.tcl)
 
 shell: binaries libraries
 	@$(TCLSH) $(SCRIPT)

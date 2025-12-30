@@ -26,7 +26,7 @@ exec tclsh8.3 "$0" "$@"
 set auto_path [linsert $auto_path 0 [file dirname [file dirname [file join [pwd] [info script]]]]]
 
 # We need TclXML
-package require xml 2.0
+package require xml
 
 # Process --
 #

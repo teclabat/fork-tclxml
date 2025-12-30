@@ -54,8 +54,8 @@ EXTERN void		TclXML_libxml2_DestroyDocument _ANSI_ARGS_((
 EXTERN void		TclXML_libxml2_DocKeep _ANSI_ARGS_((Tcl_Obj * objPtr, 
 				TclXML_libxml2_DocumentHandling keep));
 /* 10 */
-EXTERN void		TclXML_libxml2_ErrorHandler _ANSI_ARGS_((void * ctx, 
-				xmlErrorPtr error));
+EXTERN void		TclXML_libxml2_ErrorHandler _ANSI_ARGS_((void * ctx,
+				const xmlError * error));
 /* 11 */
 EXTERN void		TclXML_libxml2_ResetError _ANSI_ARGS_((
 				Tcl_Interp * interp));

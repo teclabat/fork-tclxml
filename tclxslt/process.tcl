@@ -13,9 +13,8 @@
 # $Id: process.tcl,v 1.1 2004/07/11 12:18:03 balls Exp $
 
 package provide xslt::process 1.1
-
-package require uri 1.1
-package require xslt::cache 3.3
+package require uri
+package require xslt::cache
 
 namespace eval xslt::process {
     namespace export transform fop

@@ -14,12 +14,8 @@
 #
 # $Id: domtext.tcl,v 1.5 2003/12/09 04:56:40 balls Exp $
 
-package provide domtext 3.3
-
-# We need the DOM
-# V2.0 gives us Level 2 Events
-
-package require dom 3.3
+package provide domtext
+package require dom
 
 # Configuration options:
 #

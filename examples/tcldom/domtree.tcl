@@ -18,14 +18,8 @@
 #
 # $Id$
 
-package provide domtree 3.3
-
-# We need the DOM
-# V2.0 gives us Level 2 event model
-# V2.1 gives us libxml2
-# V3.3 gives us -id node option
-
-package require dom 3.3
+package provide domtree
+package require dom
 
 namespace eval domtree {
     variable counter
@@ -866,11 +860,7 @@ proc domtree::treectrl::_refresh_string_trim {text max} {
     if {[string length $text] > $max} {
 	set text [string range $text 0 [expr $max - 3]]...
     }
-    if {[info tclversion] >= 8.1} {
-	set dot \u2022
-    } else {
-	set dot { }
-    }
+    set dot \u2022
     regsub -all [format {[%s%s%s%s]+} \n \r { } \t] $text $dot text
     return $text
 }

@@ -14,8 +14,8 @@
 # 
 # RCS: @(#) $Id: all.tcl,v 1.4 2003/12/03 20:06:36 balls Exp $
 
-package require Tcl 8.4
-package require tcltest 2.2
+package require Tcl
+package require tcltest
 tcltest::Option -parser xml {
     Selects the XML parser class.
 } AcceptAll parser

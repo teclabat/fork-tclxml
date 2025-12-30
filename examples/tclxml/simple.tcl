@@ -12,7 +12,7 @@ exec tclsh "$0" "$@"
 #
 # $Id$
 
-package require xml 3.2
+package require xml
 
 
 set parser [xml::parser]

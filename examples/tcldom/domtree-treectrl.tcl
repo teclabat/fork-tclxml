@@ -19,16 +19,8 @@
 # $Id: domtree-treectrl.tcl,v 1.1 2005/11/04 06:31:15 balls Exp $
 
 package provide domtree::treectrl 3.1
-
-# We need the treectrl widget
-
-package require treectrl 1.1
-
-# We need the DOM
-# V2.0 gives us Level 2 event model
-# V2.1 gives us libxml2
-
-package require dom 3.1
+package require treectrl
+package require dom
 
 namespace eval domtree {
     # Just make sure this namespace exists
@@ -548,11 +540,7 @@ proc domtree::treectrl::_refresh_string_trim {text max} {
     if {[string length $text] > $max} {
 	set text [string range $text 0 [expr $max - 3]]...
     }
-    if {[info tclversion] >= 8.1} {
-	set dot \u2022
-    } else {
-	set dot { }
-    }
+    set dot \u2022
     regsub -all [format {[%s%s%s%s]+} \n \r { } \t] $text $dot text
     return $text
 }

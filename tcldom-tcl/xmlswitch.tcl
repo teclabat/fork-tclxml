@@ -15,13 +15,10 @@
 #
 # $Id: xmlswitch.tcl,v 1.6 2003/12/09 04:56:43 balls Exp $
 
-package provide xmlswitch 3.3
-
-# We need the xml, dom and xpath packages
-
-package require xml 3.3
-package require dom 3.3
-package require xpath 1.0
+package provide xmlswitch 3.3.1
+package require xml
+package require dom
+package require xpath
 
 namespace eval xmlswitch {
     namespace export xmlswitch xmlswitchcont xmlswitchend

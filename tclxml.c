@@ -162,36 +162,6 @@ static int  TclXMLParse _ANSI_ARGS_((Tcl_Interp *interp,
             TclXML_Info *xmlinfo, char *data, int len));
 static void TclXMLDispatchPCDATA _ANSI_ARGS_((TclXML_Info *xmlinfo));
 
-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
-
-/*
- *----------------------------------------------------------------------------
- *
- * Tcl_GetString --
- *
- *  Compatibility routine for Tcl 8.0
- *
- * Results:
- *  String representation of object..
- *
- * Side effects:
- *  None.
- *
- *----------------------------------------------------------------------------
- */
-
-static char *
-Tcl_GetString (obj)
-      Tcl_Obj *obj; /* Object to retrieve string from. */
-{
-  char *s;
-  int i;
-
-  s = Tcl_GetStringFromObj(obj, &i);
-  return s;
-}
-#endif /* TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0 */
-
 /*
  *----------------------------------------------------------------------------
  *

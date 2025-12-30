@@ -16,13 +16,10 @@
 #
 # $Id: tclparser-8.1.tcl,v 1.26.2.1 2005/12/28 06:49:51 balls Exp $
 
-package require Tcl 8.1
-
-package provide xml::tclparser 3.3
-
-package require xmldefs 3.3
-
-package require sgmlparser 1.0
+package require Tcl
+package provide xml::tclparser 3.3.1
+package require xmldefs
+package require sgmlparser
 
 namespace eval xml::tclparser {
 

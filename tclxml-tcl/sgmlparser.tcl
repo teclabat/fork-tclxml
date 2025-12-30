@@ -18,10 +18,8 @@
 #
 # $Id: sgmlparser.tcl,v 1.32 2003/12/09 04:43:15 balls Exp $
 
-package require sgml 1.9
-
-package require uri 1.1
-
+package require sgml
+package require uri
 package provide sgmlparser 1.1
 
 namespace eval sgml {

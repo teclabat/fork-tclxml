@@ -15,8 +15,7 @@
 #
 # $Id: sgml-8.1.tcl,v 1.7 2003/12/09 04:43:15 balls Exp $
 
-package require Tcl 8.1
-
+package require Tcl
 package provide sgml 1.9
 
 namespace eval sgml {

@@ -9,9 +9,8 @@
 #
 # $Id: cgi2dom.tcl,v 1.4 2003/12/09 04:56:40 balls Exp $
 
-package require dom 2.5
+package require dom
 package require xpath
-
 package provide cgi2dom 1.1
 
 namespace eval cgi2dom {

@@ -15,8 +15,7 @@
 
 # We need the xml package, so that we get Name defined
 
-package require xml 3.0
-
+package require xml
 package provide dom::tcl 3.0
 
 # Define generic constants
